@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+  <title>Password Generator</title>
+</head>
+<body>
+  <fieldset>
+    <legend>Password Generator</legend>
+    <form method="POST">
+      {% if error %}
+      <p>{{ error }}</p>
+    {% endif %}
+      <input type="number" id="min_length" name="min_length" placeholder="Enter the minimum length">
+      <label for="has_number">Digits</label>
+      <input type="checkbox" id="has_number" name="chars" value="True">
+      <label for="has_special">Special Characters</label>
+      <input type="checkbox" id="has_special" name="chars" value="True">
+      <button type="submit">Generate</button>
+    </form>
+  </fieldset>
+</body>
+</html>

@@ -1,0 +1,78 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html *, body * {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inconsolata', monospace;
+  font-family: 'Lora', serif;
+}
+
+fieldset {
+  width: 500px;
+  height: auto;
+  margin-top: 20px;
+  display: flex;
+  background-color: #eeeeee;
+  margin: 0 auto;
+  justify-content: center;
+  padding: 10px 80px 10px 80px;
+  border: 2px solid black;
+  border-radius: 6px;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+fieldset legend {
+  background-color: gray;
+  border: 2px solid black;
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  width: 206px;
+  padding: 10px 30px 10px 20px;
+}
+
+fieldset form #min_length {
+  border: 2px solid #2E2F39;
+  border-radius: 6px;
+  padding: 6px;
+  font-size: 12px;
+  background-color: #FFFFFFFF;
+}
+
+input, #has_number, #has_special {
+  margin: 10px;
+  font-weight: bold;
+}
+
+button {
+  border: 2px solid #2E2F39;
+  border-radius: 6px;
+  padding: 10px;
+  background-color: #FFFFFFFF;
+}
+
+button:hover {
+  background-color: rgb(85, 80, 80);
+  color: white;
+  box-shadow: 3px 5px 24px 8px rgba(222, 88, 142, 0.25);
+  transition: 0.05s ease;
+}
+
+button:active {
+  transform: scale(0.97);
+  box-shadow: 2px 4px 23px 7px rgba(222, 88, 142, 0.25);
+}
+
+p {
+  color: #f22626;
+  font-size: 15px;
+}
