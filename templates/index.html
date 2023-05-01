@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="../static/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
   <title>Password Generator</title>
@@ -19,11 +19,28 @@
     {% endif %}
       <input type="number" id="min_length" name="min_length" placeholder="Enter the minimum length">
       <label for="has_number">Digits</label>
-      <input type="checkbox" id="has_number" name="chars" value="True">
+      <input type="checkbox" id="has_number" name="digits" value="True">
       <label for="has_special">Special Characters</label>
-      <input type="checkbox" id="has_special" name="chars" value="True">
+      <input type="checkbox" id="has_special" name="specials" value="True">
+      <label for="file-checkbox">Save to file?</label>
+      <input type="checkbox" id="file-checkbox" name="saving">
+      <div id="file-name" class="hidden file">
+        <input type="text" id="file_name" name="file_name" placeholder="Enter file name">
+      </div>
       <button type="submit">Generate</button>
     </form>
   </fieldset>
+<script>
+  const file_checkbox = document.getElementById("file-checkbox");
+  const file_name = document.getElementById("file-name");
+
+  file_checkbox.addEventListener("change", function() {
+    if (file_checkbox.checked) {
+      file_name.classList.remove("hidden");
+    } else {
+      file_name.classList.add("hidden");
+    }
+  });
+</script>
 </body>
 </html>

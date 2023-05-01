@@ -48,7 +48,11 @@ fieldset form #min_length {
   background-color: #FFFFFFFF;
 }
 
-input, #has_number, #has_special {
+input {
+  margin-bottom: 10px;
+}
+
+input[type="checkbox"], #has_number, #has_special {
   margin: 10px;
   font-weight: bold;
 }
@@ -75,4 +79,16 @@ button:active {
 p {
   color: #f22626;
   font-size: 15px;
+}
+
+.file input {
+  border: 2px solid #2E2F39;
+  border-radius: 6px;
+  padding: 6px;
+  font-size: 12px;
+  background-color: #FFFFFFFF;
+}
+
+.hidden {
+  display: none;
 }

@@ -12,14 +12,16 @@ def essa():
         except ValueError:
             error = 'Please enter the length of your password first!'
             return render_template('index.html', error=error)
-        has_numbers = True if request.form.getlist('chars') else False
-        has_specials = True if request.form.getlist('chars') else False
-        password = password_generator(min_length, has_numbers, has_specials)
+        has_numbers = True if request.form.getlist('digits') else False
+        has_specials = True if request.form.getlist('specials') else False
+        to_file = True if request.form.getlist('saving') else False
+        file_name = str(request.form.get('file_name'))
+        password = password_generator(min_length, file_name, to_file, has_numbers, has_specials)
         return render_template('result.html', password=password)
     else:
         return render_template('index.html')
 
-def password_generator(min_length, numbers=True, special_chars=True):
+def password_generator(min_length, file_name, to_file, numbers=True, special_chars=True):
     letters = string.ascii_letters
     digits = string.digits
     special = string.punctuation
@@ -50,6 +52,10 @@ def password_generator(min_length, numbers=True, special_chars=True):
             meets_criteria = has_digit
         elif special_chars:
             meets_criteria = meets_criteria and has_special
+
+    if to_file:
+        with open(f'{file_name}', 'a') as f:
+            f.write(f'Generated password: {pwd} \n')
 
     return pwd
 
